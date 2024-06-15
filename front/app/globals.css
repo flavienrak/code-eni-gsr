@@ -1,0 +1,221 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-Black.ttf");
+  font-weight: 900;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-ExtraBold.ttf");
+  font-weight: 800;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-Bold.ttf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-Semibold.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-Semibold.ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-Medium.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-Regular.ttf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-Thin.ttf");
+  font-weight: 200;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-Light.ttf");
+  font-weight: 100;
+}
+
+*,
+html,
+body {
+  --primary-color: #ff7705;
+  --secondary-color: #b00ff0;
+  --bg-red-5: #ef444440;
+  --bg-gradient: linear-gradient(
+    33deg,
+    var(--secondary-color),
+    var(--primary-color)
+  );
+  --color-light: #f0eef6;
+  --color-gray: #c0afc0;
+  --green-theme: hsl(125, 100%, 50%);
+  --purple-theme: #7300ff;
+  --blue-theme: hsl(202, 84%, 50%);
+  --blue-theme: hsl(215, 100%, 50%);
+  --yellow-theme: hsl(50, 100%, 50%);
+  --red-theme: hsl(7, 100%, 50%);
+
+  --green: hsl(106, 100%, 75%);
+  --red: hsl(10, 100%, 50%);
+
+  --dark: #151225;
+  --white: #ffffff;
+  --gray: rgb(247, 247, 247);
+  --gray-text: rgba(0, 0, 0, 0.25);
+  --gray-text2: rgba(0, 0, 0, 0.5);
+  --bg-landing: rgb(9, 1, 22);
+
+  /* --bg: hsl(240, 100%, 1%); */
+  --bg: hsl(255, 100%, 99%);
+  /* --bg-1: hsl(0, 0%, 5%); */
+  --bg-1: hsl(0, 0%, 95%);
+  --bg-2: hsl(0, 0%, 10%);
+
+  --bg-3: hsl(125, 100%, 5%);
+  --bg-4: hsl(125, 100%, 10%);
+
+  --bgFixed: hsla(240, 100%, 1%, 0.25);
+
+  /* --cont: #fffff5; */
+  --cont: #000005;
+
+  margin: 0;
+  padding: 0;
+  font-size: calc(0.6vh + 0.45vw + 5px);
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+  text-decoration: inherit;
+  font-family: "Inter", sans-serif;
+}
+
+.purpleTheme * {
+  --primary-color: var(--purple-theme);
+}
+.yellowTheme * {
+  --primary-color: var(--yellow-theme);
+}
+.redTheme * {
+  --primary-color: var(--red-theme);
+}
+.greenTheme * {
+  --primary-color: var(--green-theme);
+}
+.blueTheme * {
+  --primary-color: var(--blue-theme);
+}
+.bgFixed {
+  background: var(--bgFixed);
+  backdrop-filter: blur(1px);
+}
+.darkMode * {
+  --bg: #151221;
+  --bg-1: #241e38;
+  backdrop-filter: blur(5px);
+  --cont: #ffffff;
+}
+
+.lightMode * {
+  --bg: #f0eef6;
+  --bg-1: #ffffff;
+  --cont: #151225;
+}
+
+*::selection {
+  background: var(--primary-color);
+  color: var(--bg);
+}
+input::selection {
+  background: var(--bg);
+  color: var(--cont);
+}
+.br {
+  border: 1px solid rgb(200, 200, 200);
+}
+.bgText {
+  color: transparent;
+  background: var(--primary-color);
+  background-clip: text;
+}
+.bgGradient {
+  background: var(--bg-gradient);
+}
+
+textarea {
+  resize: none;
+}
+image {
+  user-select: none;
+}
+
+.cadre {
+  position: absolute;
+  right: -180vh;
+  height: 250vh;
+  width: 250vh;
+  background: var(--primary-color);
+  /* background: var(--bg-gradient); */
+  transform: rotate(45deg);
+  border-radius: 1rem;
+}
+.cadre.cadre-l {
+  left: -180vh;
+}
+
+.scr {
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+}
+.scr::-webkit-scrollbar {
+  width: 6px;
+  cursor: default;
+}
+.scr::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary-color);
+}
+.scr::-webkit-scrollbar-track {
+  background-color: transparent;
+  transition: 0.15s;
+}
+.activeLink {
+  position: relative;
+  background: var(--gray);
+}
+.activeLink::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 5px;
+  height: 100%;
+  background: var(--primary-color);
+}
+.activeLink > svg {
+  color: var(--primary-color);
+}
+.activeLink > p {
+  color: var(--primary-color);
+}
+.lien:hover {
+  background: var(--gray);
+}
+.input {
+  background: var(--gray);
+  outline: none;
+}
+.listInfo > div:nth-child(even) {
+  background: var(--white);
+}
